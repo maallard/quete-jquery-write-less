@@ -15,11 +15,11 @@ function carousel(imagesUrl) {
 
             loadImages();
             bindControls();
-            startRotating();
+            // startRotating();
 
             function loadImages() {
                 imagesUrl.forEach(function(url, index) {
-                    let $image = $(`<img src="${url}" alt="mammal-${index}">`);
+                    let $image = $(`<img src="${url}" alt="mammal-${index}" style="z-index: 1500;">`);
                     if (index > 0) {
                         $image.hide();
                     }
@@ -57,14 +57,23 @@ function carousel(imagesUrl) {
 
                 if (!hasAnimatedChildren($imageContainer)) {
                     console.log('Changing to', $nextImage.attr('alt'));
-                    $currentImage.hide("slide", {
-                            direction: opposite(direction)
-                        }, animationDelay)
-                        .promise().done(function() { // .promise() combinée avec .done() permet de vérifier que l'animaton est bien terminée avant d'en commencer une autre
-                            $nextImage.show("slide", {
-                                direction: direction
-                            }, animationDelay);
-                        });
+                    // $currentImage.hide("slide", {
+                    //         direction: opposite(direction)
+                    //     }, animationDelay)
+                    //     .promise().done(function() { // .promise() combinée avec .done() permet de vérifier que l'animaton est bien terminée avant d'en commencer une autre
+                    //         $nextImage.show("slide", {
+                    //             direction: direction
+                    //         }, animationDelay);
+                    //     });
+                    $currentImage.css('z-index', 3000).hide("slide", {
+                        direction: opposite(direction)
+                    }, animationDelay, function() {
+                        $currentImage.css('z-index', 1500);
+                    });
+
+                    $nextImage.show("slide", {
+                        direction: direction
+                    }, animationDelay);
                 } else {
                     console.log('Animation already taking place');
                 }
@@ -80,67 +89,6 @@ function carousel(imagesUrl) {
         });
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
