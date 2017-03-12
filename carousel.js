@@ -29,7 +29,7 @@ function carousel(imagesUrl) {
 
             function bindControls() {
                 $arrows.on('click', function() {
-                    move($(this).data('direction'));
+                    move($(this).data('direction')); // http://try.jquery.com/levels/3/challenges/16
                 });
             }
 
