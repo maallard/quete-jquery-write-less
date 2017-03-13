@@ -1,57 +1,52 @@
 .carousel {
-    width: 500px;
-    height: 500px;
-    position: relative;
+  width: 500px;
+  height: 500px;
+  position: relative;
 }
-
-.carousel img{
-    position: absolute;
+.carousel .images * {
+  position: absolute;
+  width: 500px;
+  height: 500px;
 }
-
 .carousel .arrow {
-    min-height: 50px;
-    min-width: 50px;
-    display: inline-block;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    height: 500px;
-    top: 0;
-    z-index: 5000;
+  min-height: 50px;
+  min-width: 50px;
+  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 500px;
+  top: 0;
+  z-index: 5000;
 }
-
 .carousel .left.arrow {
-    -webkit-transform: rotate(180deg);
-    -moz-transform: rotate(180deg);
-    -o-transform: rotate(180deg);
-    -ms-transform: rotate(180deg);
-    transform: rotate(180deg);
-    left: 0px;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+  left: 0px;
 }
-
 .carousel .right.arrow {
-    left: 450px;
+  left: 450px;
 }
-
 .transparent {
-    background: rgba(242, 246, 248, 1);
-    background: -moz-linear-gradient(left, rgba(242, 246, 248, 1) 0%, rgba(216, 225, 231, 0.82) 22%, rgba(181, 198, 208, 0.46) 67%, rgba(224, 239, 249, 0.19) 100%);
-    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(242, 246, 248, 1)), color-stop(22%, rgba(216, 225, 231, 0.82)), color-stop(67%, rgba(181, 198, 208, 0.46)), color-stop(100%, rgba(224, 239, 249, 0.19)));
-    background: -webkit-linear-gradient(left, rgba(242, 246, 248, 1) 0%, rgba(216, 225, 231, 0.82) 22%, rgba(181, 198, 208, 0.46) 67%, rgba(224, 239, 249, 0.19) 100%);
-    background: -o-linear-gradient(left, rgba(242, 246, 248, 1) 0%, rgba(216, 225, 231, 0.82) 22%, rgba(181, 198, 208, 0.46) 67%, rgba(224, 239, 249, 0.19) 100%);
-    background: -ms-linear-gradient(left, rgba(242, 246, 248, 1) 0%, rgba(216, 225, 231, 0.82) 22%, rgba(181, 198, 208, 0.46) 67%, rgba(224, 239, 249, 0.19) 100%);
+  background: #f2f6f8;
+  background: -moz-linear-gradient(left, #f2f6f8 0%, rgba(216, 225, 231, 0.82) 22%, rgba(181, 198, 208, 0.46) 67%, rgba(224, 239, 249, 0.19) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, #f2f6f8), color-stop(22%, rgba(216, 225, 231, 0.82)), color-stop(67%, rgba(181, 198, 208, 0.46)), color-stop(100%, rgba(224, 239, 249, 0.19)));
+  background: -webkit-linear-gradient(left, #f2f6f8 0%, rgba(216, 225, 231, 0.82) 22%, rgba(181, 198, 208, 0.46) 67%, rgba(224, 239, 249, 0.19) 100%);
+  background: -o-linear-gradient(left, #f2f6f8 0%, rgba(216, 225, 231, 0.82) 22%, rgba(181, 198, 208, 0.46) 67%, rgba(224, 239, 249, 0.19) 100%);
+  background: -ms-linear-gradient(left, #f2f6f8 0%, rgba(216, 225, 231, 0.82) 22%, rgba(181, 198, 208, 0.46) 67%, rgba(224, 239, 249, 0.19) 100%);
 }
-
 .circular {
-    border-radius: 50%;
-    height: 50px;
-    width: 50px;
-    text-align: center;
-    vertical-align: middle;
-    line-height: 50px;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 50px;
 }
-
 body {
-    background-color: salmon;
+  background-color: salmon;
 }

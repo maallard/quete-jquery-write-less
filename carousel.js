@@ -59,14 +59,7 @@ function carousel(url) {
 
                 if (!hasAnimatedChildren($imageContainer)) {
                     console.log('Changing to', $nextImage.attr('alt'));
-                    // $currentImage.hide("slide", {
-                    //         direction: opposite(direction)
-                    //     }, animationDelay)
-                    //     .promise().done(function() { // .promise() combinée avec .done() permet de vérifier que l'animaton est bien terminée avant d'en commencer une autre
-                    //         $nextImage.show("slide", {
-                    //             direction: direction
-                    //         }, animationDelay);
-                    //     });
+                    
                     $currentImage.css('z-index', 3000).hide("slide", {
                         direction: opposite(direction)
                     }, animationDelay, function() {
