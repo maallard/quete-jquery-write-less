@@ -1,8 +1,8 @@
-const IMAGES_URL = ['img/pika.jpg', 'img/raccoon.png', 'img/red-panda.jpg', 'img/squirrel.jpg'];
+const URL = 'images.json';
 
-carousel(IMAGES_URL);
+carousel(URL);
 
-function carousel(imagesUrl) {
+function carousel(url) {
     if (typeof jQuery == 'undefined') { // vérifie que jQuery a bien chargé
         console.error('jQuery is needed for this component');
     } else {
@@ -13,17 +13,19 @@ function carousel(imagesUrl) {
             const slideDelay = 3000;
             const animationDelay = 500;
 
-            loadImages();
+            loadImages(url);
             bindControls();
             // startRotating();
 
-            function loadImages() {
-                imagesUrl.forEach(function(url, index) {
-                    let $image = $(`<img src="${url}" alt="mammal-${index}" style="z-index: 1500;">`);
-                    if (index > 0) {
-                        $image.hide();
-                    }
-                    $imageContainer.append($image);
+            function loadImages(url) {
+                $.getJSON(url, function(data){
+                    data.urls.forEach(function(url, index) {
+                        let $image = $(`<img src="${url}" alt="mammal-${index}" style="z-index: 1500;">`);
+                        if (index > 0) {
+                            $image.hide();
+                        }
+                        $imageContainer.append($image);
+                    });
                 });
             }
 
