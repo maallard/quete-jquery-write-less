@@ -19,8 +19,8 @@ function carousel(url) {
 
             function loadImages(url) {
                 $.getJSON(url, function(data){
-                    data.urls.forEach(function(url, index) {
-                        let $image = $(`<img src="${url}" alt="mammal-${index}" style="z-index: 1500;">`);
+                    data.images.forEach(function(image, index) {
+                        let $image = $(`<img src="${image.base64}" alt="${image.alt}">`);
                         if (index > 0) {
                             $image.hide();
                         }
@@ -59,11 +59,11 @@ function carousel(url) {
 
                 if (!hasAnimatedChildren($imageContainer)) {
                     console.log('Changing to', $nextImage.attr('alt'));
-                    
-                    $currentImage.css('z-index', 3000).hide("slide", {
+
+                    $currentImage.addClass('above').hide("slide", {
                         direction: opposite(direction)
                     }, animationDelay, function() {
-                        $currentImage.css('z-index', 1500);
+                        $currentImage.removeClass('above');
                     });
 
                     $nextImage.show("slide", {

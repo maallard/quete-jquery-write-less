@@ -8,10 +8,11 @@
     position: relative;
 }
 
-.carousel .images *{
+.carousel .images * {
     position: absolute;
     width: @width;
     height: @width;
+    z-index: 1500;
 }
 
 .carousel .arrow {
@@ -33,7 +34,7 @@
     -o-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
     transform: rotate(180deg);
-    left: 0px;
+    left: 0;
 }
 
 .carousel .right.arrow {
@@ -60,4 +61,8 @@
 
 body {
     background-color: salmon;
+}
+
+.above {
+    z-index: 3000;
 }
