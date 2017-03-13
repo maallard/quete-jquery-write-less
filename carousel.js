@@ -15,7 +15,7 @@ function carousel(url) {
 
             loadImages(url);
             bindControls();
-            // startRotating();
+            startRotating();
 
             function loadImages(url) {
                 $.getJSON(url, function(data){
